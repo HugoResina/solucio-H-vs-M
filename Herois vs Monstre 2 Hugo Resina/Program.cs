@@ -19,6 +19,11 @@ namespace heroisContraMonstres
             //part del programa per ficar creacio torns etc
            
 
+
+
+
+                //hola
+                //test2asdfasdfasdfasdfasdfasdf
             }
             else
             {
