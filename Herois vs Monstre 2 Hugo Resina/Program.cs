@@ -17,7 +17,7 @@ namespace heroisContraMonstres
             if (validatorFirstMenu == 1) 
             {
             //part del programa per ficar creacio torns etc
-            Console.WriteLine(C1HVM.recsuma(validatorFirstMenu));
+           
 
             }
             else
