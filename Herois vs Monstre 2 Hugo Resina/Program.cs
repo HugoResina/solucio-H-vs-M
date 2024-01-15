@@ -16,12 +16,12 @@ namespace heroisContraMonstres
             validatorFirstMenu = Convert.ToInt16(Console.ReadLine());
             if (validatorFirstMenu == 1) 
             {
-            //part del programa per ficar creacio torns etc
-           
+                //part del programa per ficar creacio torns etc
 
 
 
 
+                Console.WriteLine("deberia implementarse en nuevo");
                 //hola
                 //test2asdfasdfasdfasdfasdfasdf
             }
