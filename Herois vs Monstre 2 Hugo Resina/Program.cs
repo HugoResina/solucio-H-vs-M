@@ -18,12 +18,6 @@ namespace heroisContraMonstres
             {
                 //part del programa per ficar creacio torns etc
 
-
-
-
-                Console.WriteLine("deberia implementarse en nuevo");
-                //hola
-                //test2asdfasdfasdfasdfasdfasdf
             }
             else
             {
