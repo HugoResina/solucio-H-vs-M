@@ -11,9 +11,13 @@ namespace metodesHVM
     {
         public static bool createStat(int min, int max, int value)
         {
-
             return (value >= min && value <= max) ? true : false;
-
         }
+        public static int randomStat(int min, int max) 
+        {
+            Random random = new Random();
+            return random.Next(min, max + 1);
+        }
+        
     }
 }
