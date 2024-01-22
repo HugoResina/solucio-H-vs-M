@@ -17,6 +17,7 @@ namespace heroisContraMonstres
             const string askChangeName = "vols canviar el nom dels teus personatges?\n1.-si\n2.-no";
             const string changeName = "introdueix els nous 4 noms, segueix el format: nom, nom, nom, nom y recorda, el ordre sera: arquera, barbar, maga i druida";
             const string getReady = "preparat per començar la batalla? prem cualsevol tecla";
+            const string chooseAction = "que fara {0}?\n1.-";
 
 
             //stats
@@ -50,26 +51,31 @@ namespace heroisContraMonstres
             maxArcherHealth = 2000;
             minArcherAttack = 200;
             maxArcherAttack = 300;
+            practicArcherHealth = 0;
             //barbarian stats
             minBarbarianHealth = 3000;
             maxBarbarianHealth = 3750;
             minBarbarianAttack = 150;
             maxBarbarianAttack = 250;
+            practicBarbarianHealth = 0;
             //wizard stats
             minWizardHealth = 1100;
             maxWizardHealth = 1500;
             minWizardAttack = 300;
             maxWizardAttack = 400;
+            practicWizardHealth = 0;
             //druid stats
             minDruidHealth = 2000;
             maxDruidHealth = 2500;
             minDruidAttack = 70;
             maxDruidAttack = 120;
+            practicDruidHealth = 0;
             //monster stats
             minMonsterHealth = 7000;
             maxMonsterHealth = 10000;
             minMonsterAttack = 300;
             maxMonsterAttack = 400;
+            practicMonsterHealth = 0;
 
             dificultySelector = 0;
 
@@ -133,21 +139,21 @@ namespace heroisContraMonstres
                     {
                         Console.WriteLine(insertStat, statHealth, roleArcher, minArcherHealth, maxArcherHealth);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minArcherHealth, maxArcherHealth, statValue));
+                    } while (!C1HVM.CreateStat(minArcherHealth, maxArcherHealth, statValue));
                     practicArcherHealth = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statStrenght, roleArcher, minArcherAttack, maxArcherAttack);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minArcherAttack, maxArcherAttack, statValue));
+                    } while (!C1HVM.CreateStat(minArcherAttack, maxArcherAttack, statValue));
                     practicArcherAttack = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statReduction, roleArcher, percentage_25, percentage_35);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(percentage_25, percentage_35, statValue));
+                    } while (!C1HVM.CreateStat(percentage_25, percentage_35, statValue));
                     archerDefense = statValue;
                     Console.Clear();
 
@@ -158,21 +164,21 @@ namespace heroisContraMonstres
                     {
                         Console.WriteLine(insertStat, statHealth, roleBarbarian, minBarbarianHealth, maxBarbarianHealth);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minBarbarianHealth, maxBarbarianHealth, statValue));
+                    } while (!C1HVM.CreateStat(minBarbarianHealth, maxBarbarianHealth, statValue));
                     practicBarbarianHealth = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statStrenght, roleBarbarian, minBarbarianAttack, maxBarbarianAttack);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minBarbarianAttack, maxBarbarianAttack, statValue));
+                    } while (!C1HVM.CreateStat(minBarbarianAttack, maxBarbarianAttack, statValue));
                     practicBarbarianAttack = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statReduction, roleBarbarian, percentage_35, percentage_45);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(percentage_35, percentage_45, statValue));
+                    } while (!C1HVM.CreateStat(percentage_35, percentage_45, statValue));
                     barbarianDefense = statValue;
                     Console.Clear();
 
@@ -184,21 +190,21 @@ namespace heroisContraMonstres
                     {
                         Console.WriteLine(insertStat, statHealth, roleWizard, minWizardHealth, maxWizardHealth);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minWizardHealth, maxWizardHealth, statValue));
+                    } while (!C1HVM.CreateStat(minWizardHealth, maxWizardHealth, statValue));
                     practicWizardHealth = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statStrenght, roleWizard, minWizardAttack, maxWizardAttack);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minWizardAttack, maxWizardAttack, statValue));
+                    } while (!C1HVM.CreateStat(minWizardAttack, maxWizardAttack, statValue));
                     practicWizardAttack = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statReduction, roleWizard, percentage_20, percentage_35);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(percentage_20, percentage_35, statValue));
+                    } while (!C1HVM.CreateStat(percentage_20, percentage_35, statValue));
                     wizardDefense = statValue;
                     Console.Clear();
 
@@ -208,21 +214,21 @@ namespace heroisContraMonstres
                     {
                         Console.WriteLine(insertStat, statHealth, roleDruid, minDruidHealth, maxDruidHealth);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minDruidHealth, maxDruidHealth, statValue));
+                    } while (!C1HVM.CreateStat(minDruidHealth, maxDruidHealth, statValue));
                     practicDruidHealth = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statStrenght, roleDruid, minDruidAttack, maxDruidAttack);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minDruidAttack, maxDruidAttack, statValue));
+                    } while (!C1HVM.CreateStat(minDruidAttack, maxDruidAttack, statValue));
                     practicDruidAttack = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statReduction, roleDruid, percentage_25, percentage_40);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(percentage_25, percentage_40, statValue));
+                    } while (!C1HVM.CreateStat(percentage_25, percentage_40, statValue));
                     druidDefense = statValue;
                     Console.Clear();
 
@@ -232,42 +238,42 @@ namespace heroisContraMonstres
                     {
                         Console.WriteLine(insertStat, statHealth, roleMonster, minMonsterHealth, maxMonsterHealth);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minMonsterHealth, maxMonsterHealth, statValue));
+                    } while (!C1HVM.CreateStat(minMonsterHealth, maxMonsterHealth, statValue));
                     practicMonsterHealth = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statStrenght, roleMonster, minMonsterAttack, maxMonsterAttack);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(minMonsterAttack, maxMonsterAttack, statValue));
+                    } while (!C1HVM.CreateStat(minMonsterAttack, maxMonsterAttack, statValue));
                     practicMonsterAttack = statValue;
                     Console.Clear();
                     do
                     {
                         Console.WriteLine(insertStat, statReduction, roleMonster, percentage_20, percentage_30);
                         statValue = Convert.ToInt32(Console.ReadLine());
-                    } while (!C1HVM.createStat(percentage_20, percentage_30, statValue));
+                    } while (!C1HVM.CreateStat(percentage_20, percentage_30, statValue));
                     monsterDefense = statValue;
                     Console.Clear();
                 }
                 if (dificultySelector == 4)
                 {
-                    practicArcherHealth = C1HVM.randomStat(minArcherHealth, maxArcherHealth);
-                    practicArcherAttack = C1HVM.randomStat(minArcherAttack, maxArcherAttack);
-                    archerDefense = C1HVM.randomStat(percentage_25, percentage_35);
-                    practicBarbarianHealth = C1HVM.randomStat(minBarbarianHealth, maxBarbarianHealth);
-                    practicBarbarianAttack = C1HVM.randomStat(minBarbarianAttack, maxBarbarianAttack);
-                    barbarianDefense = C1HVM.randomStat(percentage_35, percentage_45);
-                    practicWizardHealth = C1HVM.randomStat(minWizardHealth, maxWizardHealth);
-                    practicWizardAttack = C1HVM.randomStat(minWizardAttack, maxWizardAttack);
-                    wizardDefense = C1HVM.randomStat(percentage_20, percentage_35);
-                    practicDruidHealth = C1HVM.randomStat(minDruidHealth, maxDruidHealth);
-                    practicDruidAttack = C1HVM.randomStat(minDruidAttack, maxDruidAttack);
-                    druidDefense = C1HVM.randomStat(percentage_25, percentage_40);
+                    practicArcherHealth = C1HVM.RandomStat(minArcherHealth, maxArcherHealth);
+                    practicArcherAttack = C1HVM.RandomStat(minArcherAttack, maxArcherAttack);
+                    archerDefense = C1HVM.RandomStat(percentage_25, percentage_35);
+                    practicBarbarianHealth = C1HVM.RandomStat(minBarbarianHealth, maxBarbarianHealth);
+                    practicBarbarianAttack = C1HVM.RandomStat(minBarbarianAttack, maxBarbarianAttack);
+                    barbarianDefense = C1HVM.RandomStat(percentage_35, percentage_45);
+                    practicWizardHealth = C1HVM.RandomStat(minWizardHealth, maxWizardHealth);
+                    practicWizardAttack = C1HVM.RandomStat(minWizardAttack, maxWizardAttack);
+                    wizardDefense = C1HVM.RandomStat(percentage_20, percentage_35);
+                    practicDruidHealth = C1HVM.RandomStat(minDruidHealth, maxDruidHealth);
+                    practicDruidAttack = C1HVM.RandomStat(minDruidAttack, maxDruidAttack);
+                    druidDefense = C1HVM.RandomStat(percentage_25, percentage_40);
 
-                    practicMonsterHealth = C1HVM.randomStat(minMonsterHealth, maxMonsterHealth);
-                    practicMonsterAttack = C1HVM.randomStat(minMonsterAttack, maxMonsterAttack);
-                    monsterDefense = C1HVM.randomStat(percentage_20, percentage_30);
+                    practicMonsterHealth = C1HVM.RandomStat(minMonsterHealth, maxMonsterHealth);
+                    practicMonsterAttack = C1HVM.RandomStat(minMonsterAttack, maxMonsterAttack);
+                    monsterDefense = C1HVM.RandomStat(percentage_20, percentage_30);
                 }
                 Console.WriteLine(askChangeName);
                 validatorNameChange = Convert.ToInt16(Console.ReadLine());
@@ -284,8 +290,38 @@ namespace heroisContraMonstres
                 Console.Clear();
                 Console.WriteLine(getReady);
                 Console.ReadKey();
+                Console.Clear();
                 //combat
+                do
+                {
+                    int[] turnsArray = C1HVM.turnCreator();
 
+                    for (int i = 0; i < turnsArray.Length; i++)
+                    {
+                        string whoTurn = C1HVM.turnSelector(turnsArray[i]);
+                        if (whoTurn == "A")
+                        {
+
+                        }
+                        if (whoTurn == "B")
+                        {
+
+                        }
+                        if (whoTurn == "M")
+                        {
+
+                        }
+                        if (whoTurn == "D")
+                        {
+
+                        }
+                    }
+                    //turn monstre
+
+                    //stopper
+                    practicMonsterHealth = 0;
+                } while (practicMonsterHealth > 0 && (practicArcherHealth > 0 && practicBarbarianHealth > 0 && practicWizardHealth > 0 && practicDruidHealth > 0));
+                //creacio de torn aleatori
             }
             else
             {
