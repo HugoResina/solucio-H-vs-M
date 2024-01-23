@@ -8,9 +8,7 @@ namespace heroisContraMonstres
     {
         public static void Main(string[] args)
         {
-            //programa main
-
-            //misatges
+           
             const string startFight = "1. Iniciar una nova batalla";
             const string getOut = "0. Sortir";
             const string insertStat = "introdueix {0} de {1}, recorda, el valor ha de estar entre {2} i {3}:";
@@ -28,7 +26,6 @@ namespace heroisContraMonstres
             const string msgWizardUlt = "{0} fa servir la seva habilitat definitiva, fa un atac que fara el triple del seu mal";
             const string msgDruidUlt = "{0} fa servir la seva habilitat definitiva, curara 500 de vida a tots els herois";
             const string dead = "{0} esta mort@, no pot prendre acció";
-            const string monsterDead = "el monstre ha mort";
             const string stuned = "el monstre no ataca, ja que esta paralitzat per la habilitat de la arquera";
             const string barbarianHability = "el barbar no pateix mal degut a la seva habilitat";
             const string monsterWin = "el monstre ha vençut als herois";
@@ -36,7 +33,7 @@ namespace heroisContraMonstres
             const string replay = "vols tornar a jugar?\n1.-si\n2.-no";
             const string mistakeDone = "has comés un error, et queden aquests intents: ";
 
-            //stats
+           
             string statStrenght = "la força ";
             string statHealth = "la vida";
             string statReduction = "la reduccio porcentual de mal";
@@ -84,38 +81,38 @@ namespace heroisContraMonstres
             stunCounter = 0;
             replayValidator = 0;
 
-            //dmg reduction
+          
             const int percentage_20 = 20;
             const int percentage_25 = 25;
             const int percentage_30 = 30;
             const int percentage_35 = 35;
             const int percentage_40 = 40;
             const int percentage_45 = 45;
-            //archer stats
+           
             const int minArcherHealth = 1500;
             const int maxArcherHealth = 2000;
             const int minArcherAttack = 200;
             const int maxArcherAttack = 300;
             practicArcherHealth = 0;
-            //barbarian stats
+            
             const int minBarbarianHealth = 3000;
             const int maxBarbarianHealth = 3750;
             const int minBarbarianAttack = 150;
             const int maxBarbarianAttack = 250;
             practicBarbarianHealth = 0;
-            //wizard stats
+           
             const int minWizardHealth = 1100;
             const int maxWizardHealth = 1500;
             const int minWizardAttack = 300;
             const int maxWizardAttack = 400;
             practicWizardHealth = 0;
-            //druid stats
+          
             const int minDruidHealth = 2000;
             const int maxDruidHealth = 2500;
             const int minDruidAttack = 70;
             const int maxDruidAttack = 120;
             practicDruidHealth = 0;
-            //monster stats
+          
             const int minMonsterHealth = 7000;
             const int maxMonsterHealth = 10000;
             const int minMonsterAttack = 300;
@@ -128,8 +125,7 @@ namespace heroisContraMonstres
             validatorFirstMenu = Convert.ToInt16(Console.ReadLine());
             if (validatorFirstMenu == 1)
             {
-                //part del programa per ficar creacio de personatges, torns etc
-                //menu de dificultat
+               
                 do
                 {
                     replayValidator = 0;
@@ -182,7 +178,7 @@ namespace heroisContraMonstres
                     if (dificultySelector == 3)
                     {
 
-                        //stats Arquera
+                       
                         do
                         {
                             Console.WriteLine(insertStat, statHealth, roleArcher, minArcherHealth, maxArcherHealth);
@@ -244,7 +240,7 @@ namespace heroisContraMonstres
                         Console.Clear();
 
 
-                        //stats Barbar
+                      
                         if (!threeErrors)
                         {
                             do
@@ -307,7 +303,7 @@ namespace heroisContraMonstres
                         Console.Clear();
 
 
-                        //stats maga
+                       
 
                         if (!threeErrors)
                         {
@@ -370,7 +366,7 @@ namespace heroisContraMonstres
                         errors = 0;
                         Console.Clear();
 
-                        //stats druida
+                       
                         if (!threeErrors)
                         {
                             do
@@ -432,7 +428,7 @@ namespace heroisContraMonstres
                         errors = 0;
                         Console.Clear();
 
-                        //stats monstre
+                      
                         if (!threeErrors)
                         {
                             do
@@ -538,19 +534,20 @@ namespace heroisContraMonstres
                         Console.WriteLine(getReady);
                         Console.ReadKey();
                         Console.Clear();
-                        //combat
+                       
                         do
                         {
                             int[] turnsArray = C1HVM.turnCreator();
 
                             for (int i = 0; i < turnsArray.Length; i++)
                             {
+                                Console.WriteLine();
                                 string whoTurn = C1HVM.turnSelector(turnsArray[i]);
                                 if (whoTurn == "A")
                                 {
                                     if (practicMonsterHealth <= 0)
                                     {
-                                        Console.WriteLine(monsterDead);
+                                       
                                     }
                                     else if (practicArcherHealth > 0)
                                     {
@@ -611,7 +608,7 @@ namespace heroisContraMonstres
                                 {
                                     if (practicMonsterHealth <= 0)
                                     {
-                                        Console.WriteLine(monsterDead);
+                                        
                                     }
                                     else if (practicBarbarianHealth > 0)
                                     {
@@ -669,7 +666,7 @@ namespace heroisContraMonstres
                                 {
                                     if (practicMonsterHealth <= 0)
                                     {
-                                        Console.WriteLine(monsterDead);
+                                        
                                     }
                                     else if (practicWizardHealth > 0)
                                     {
@@ -728,7 +725,7 @@ namespace heroisContraMonstres
                                 {
                                     if (practicMonsterHealth <= 0)
                                     {
-                                        Console.WriteLine();
+                                        
                                     }
                                     else if (practicDruidHealth > 0)
                                     {
@@ -786,7 +783,8 @@ namespace heroisContraMonstres
 
                                 }
                             }
-                            if (!archerUlt)
+                            Console.WriteLine();
+                            if (!archerUlt && practicMonsterHealth > 0)
                             {
                                 if (practicArcherHealth > 0)
                                 {
@@ -794,6 +792,7 @@ namespace heroisContraMonstres
                                     practicArcherHealth -= monsterDmg;
                                     Console.WriteLine(attackMsg, roleMonster, roleArcher, monsterDmg, practicArcherHealth, totArcherHealth);
                                 }
+                                Console.WriteLine();
                                 if (practicBarbarianHealth > 0 && !barbarianUlt)
                                 {
                                     monsterDmg = C1HVM.Attack(practicMonsterAttack, barbarianDefense);
@@ -805,18 +804,21 @@ namespace heroisContraMonstres
                                     counterBarbarianUlt--;
                                     Console.WriteLine(barbarianHability);
                                 }
+                                Console.WriteLine();
                                 if (practicWizardHealth > 0)
                                 {
                                     monsterDmg = C1HVM.Attack(practicMonsterAttack, wizardDefense);
                                     practicWizardHealth -= monsterDmg;
                                     Console.WriteLine(attackMsg, roleMonster, roleWizard, monsterDmg, practicWizardHealth, totWizardHealth);
                                 }
+                                Console.WriteLine();
                                 if (practicDruidHealth > 0)
                                 {
                                     monsterDmg = C1HVM.Attack(practicMonsterAttack, druidDefense);
                                     practicDruidHealth -= monsterDmg;
                                     Console.WriteLine(attackMsg, roleMonster, roleDruid, monsterDmg, practicDruidHealth, totDruidHealth);
                                 }
+                                Console.WriteLine();
                             }
                             else if (archerUlt)
                             {
@@ -873,7 +875,7 @@ namespace heroisContraMonstres
             }
             else
             {
-                //directament no entra i et dona gracies
+               
                 Console.WriteLine("gracies per jugar");
             }
 
